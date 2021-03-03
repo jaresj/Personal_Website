@@ -43,31 +43,48 @@ body {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives the scrolling effect as the typing happens */
     letter-spacing: .15em;
-    -webkit-animation: type 5s steps(40, end);
+    -webkit-animation: type 5s steps(40);
     animation: 
-        typing 4s steps(40, end),
-        blink-caret .75s step-end infinite;
+        type 4s steps(40),
+        blink-caret .75s step-end 5;
     background-color: rgb(255, 255, 255); 
     background-color: rgb(255, 255, 255);
     color: black;
     font-weight: bold;
     /* border: 3px solid #f1f1f1; */
     position: absolute;
-    top: 50%;
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+}
+
+.bg-text h1:nth-child(1) {
+    position: absolute;
+    display: inline-block;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
+}
+
+.bg-text h1:nth-child(2) {
+    position: absolute;
+    display: inline-block;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .bg-text h1:nth-child(2) {
     white-space:nowrap;
     overflow: hidden;
     opacity: 0;
-    -webkit-animation: type2 4s steps(40, end);
-    animation: type2 4s steps(40, end);
+    -webkit-animation: type 4s steps(40, end);
+    animation: 
+    type2 4s steps(40, end),
+    blink-caret .75s step-end 10;
     -webkit-animation-delay: 4s;
     animation-delay: 4s;
     -webkit-animation-fill-mode: forwards;
@@ -75,19 +92,19 @@ body {
 }
 
 /* The typing effect */
-@keyframes typing {
+@keyframes type {
     from {width: 0; }
 }
 
-@-webkit-keyframes typing {
+@-webkit-keyframes type {
     from {width: 0; }
 }
 
  span {
-    animation: blink 1s infinite;
+    animation: blink 1s 5;
 } 
 
-@keyframes typing2 {
+@keyframes type2 {
     0%{width: 0;}
     from {opacity: 0;}
     1%{opacity: 1;}
@@ -95,7 +112,7 @@ body {
     100%{opacity: 1;}
 }
 
-@-webkit-keyframes typing2 {
+@-webkit-keyframes type2 {
     0%{width: 0;}
     from {opacity: 0;}
     1%{opacity: 1;}
@@ -105,9 +122,11 @@ body {
 
 /* the typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black; }
+    from, to { border-color: black }
+    50% { border-color: transparent }
 }
+
+
 
 /* Table - this section covers the styling of the columns and rows within our table */
 * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
