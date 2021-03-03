@@ -14,6 +14,38 @@ body {
     font-size: 1.5vw;
 }
 
+.navbar {
+    overflow: hidden; /* This ensures that any content that overflows beyond the boundary of the nav bar is not displayed */
+    background-color: black; /* This colors the navbar black */
+    position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
+    top: 0; /* This makes the navbar span the entire width of the page */
+    width: 100%;
+    z-index: 1;
+}
+
+/* Navbar hover effect */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: .75vw 1vw; /* This adds padding around our navbar */
+    text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+    font-family: Avant Grade, Helvetica;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition-duration: .75s;
+    transition-duration: .75s;
+
+}
+
 * {
     box-sizing: border-box;
 }
@@ -37,7 +69,7 @@ body {
 
 /* Position text in the middle of the page/image */
 .bg-text p {
-    font-size: 14px;
+    font-size-adjust: unset;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid black; /* The typewriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -47,8 +79,7 @@ body {
     animation: 
         type 3s steps(40, end),
         blink-caret .75s step-end 3;
-    background-color: rgb(255, 255, 255); 
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
     color: black;
     font-weight: bold;
     /* border: 3px solid #f1f1f1; */
@@ -159,4 +190,55 @@ body {
     content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
     display: table; /* The display property sepecifies the type of display behavior; the table value tells the browseer to treat the element as a table */
     clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+/* Image elements */ 
+img {
+    filter: grayscale(75%);
+    border-radius: 8px; /* This causes our images to have slightly rounded edges */
+    max-width: 100%;
+    height: 100%;
+    margin: auto auto auto auto;
+    display: block;
+}
+
+/* Anchor elements */ 
+a {
+    color: blue; /* We are ensuring all links are blue */ 
+}
+
+/* Paragraph elements */
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: .1vw; /* This expands the text align slightly */
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+h1 {
+    text-transform: uppercase; /* We are capitalizing our headings */
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin-top: 3%; /* I'm adding a small margin above the headings */
+    color: #1a1a1a;
+}
+
+h1:hover {
+    font-weight: normal; /* Makes the text no longer bold */
+}
+
+img:hover {
+    filter: grayscale(5%);  /* Brings back most of the image's color when hovered over */
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 2%;
+    background-color: white;
 }
