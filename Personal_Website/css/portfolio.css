@@ -36,17 +36,17 @@ body {
 }
 
 /* Position text in the middle of the page/image */
-.bg-text h1 {
+.bg-text p {
     font-size: 14px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid black; /* The typewriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives the scrolling effect as the typing happens */
     letter-spacing: .15em;
-    -webkit-animation: type 5s steps(40);
+    -webkit-animation: type 4s steps(40, end);
     animation: 
-        type 4s steps(40),
-        blink-caret .75s step-end 5;
+        type 3s steps(40, end),
+        blink-caret .75s step-end 3;
     background-color: rgb(255, 255, 255); 
     background-color: rgb(255, 255, 255);
     color: black;
@@ -54,37 +54,38 @@ body {
     /* border: 3px solid #f1f1f1; */
     position: absolute;
     display: inline-block;
-    width: 30%;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
 }
 
-.bg-text h1:nth-child(1) {
+.bg-text p:nth-child(1) {
     position: absolute;
     display: inline-block;
-    top: 45%;
+    overflow: hidden;
+    top: 50%;
     left: 50%;
+    width: 20%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-.bg-text h1:nth-child(2) {
+.bg-text p:nth-child(2) {
     position: absolute;
     display: inline-block;
     top: 55%;
     left: 50%;
+    width: 27%;
     transform: translate(-50%, -50%);
     z-index: 2;
-}
-
-.bg-text h1:nth-child(2) {
     white-space:nowrap;
     overflow: hidden;
     opacity: 0;
     -webkit-animation: type 4s steps(40, end);
     animation: 
-    type2 4s steps(40, end),
-    blink-caret .75s step-end 10;
+    type2 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
     -webkit-animation-delay: 4s;
     animation-delay: 4s;
     -webkit-animation-fill-mode: forwards;
@@ -94,14 +95,22 @@ body {
 /* The typing effect */
 @keyframes type {
     from {width: 0; }
+    from {opacity: 0;}
+    1%{opacity: 1;}
+    to{opacity: 1;}
+    100%{opacity: 1;}
 }
 
 @-webkit-keyframes type {
     from {width: 0; }
+    from {opacity: 0;}
+    1%{opacity: 1;}
+    to{opacity: 1;}
+    100%{opacity: 1;}
 }
 
  span {
-    animation: blink 1s 5;
+    animation: blink 1s;
 } 
 
 @keyframes type2 {
@@ -122,11 +131,9 @@ body {
 
 /* the typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: black }
-    50% { border-color: transparent }
+    from, to { border-color: transparent }
+    50% { border-color: black; }
 }
-
-
 
 /* Table - this section covers the styling of the columns and rows within our table */
 * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
