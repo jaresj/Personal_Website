@@ -12,14 +12,15 @@ body {
     letter-spacing: .2vw;
     font-family: Avant Garde, Helvetica;
     font-size: 1.5vw;
+    background-color: whitesmoke;
 }
 
 .navbar {
     overflow: hidden; /* This ensures that any content that overflows beyond the boundary of the nav bar is not displayed */
-    background-color: black; /* This colors the navbar black */
+    background-color: whitesmoke; /* This colors the navbar black */
     position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
-    top: 0; /* This makes the navbar span the entire width of the page */
-    width: 100%;
+    top: 0; 
+    width: 100%; /* This makes the navbar span the entire width of the page */
     z-index: 1;
 }
 
@@ -27,7 +28,7 @@ body {
 .navbar a {
     float: left;
     display: block;
-    color: white;
+    color: black;
     padding: .75vw 1vw; /* This adds padding around our navbar */
     text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
     font-family: Avant Grade, Helvetica;
@@ -37,7 +38,7 @@ body {
 }
 
 .navbar a:hover {
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -52,11 +53,12 @@ body {
 
 .bg-image {
     /* the image used */
-    background-image: url(./images/white-background.jpg);
+   background-image: url(./images/plant_background.jpg); 
+   background-color: whitesmoke;
 
     /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 
     /* Full height */
     height: 100%;
@@ -241,4 +243,34 @@ img:hover {
 footer {
     padding: 2%;
     background-color: white;
+}
+
+#myBtn {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 99;
+    display: none;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg); 
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+#myBtn:hover {
+    background-color: whitesmoke;
+    color: black;
 }
