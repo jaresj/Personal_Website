@@ -177,7 +177,7 @@ body {
     float: left;
     width: 50%; /* This ensures on column taking up half the page width */
     padding: 1.6%;
-    background-color: #f2f2f2;
+    background-color: whitesmoke;
     height: 500px; /* You may need to adjust this to fit your content */
 }
 
@@ -277,3 +277,4 @@ footer {
     background-color: gray;
     color: white;
 }
+
