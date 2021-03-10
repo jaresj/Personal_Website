@@ -21,7 +21,7 @@ body {
     position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
     top: 0; 
     width: 100%; /* This makes the navbar span the entire width of the page */
-    z-index: 1;
+    z-index: 100;
     opacity: 1;
 }
 
@@ -186,7 +186,7 @@ body {
     width: 50%;
     padding: 1.6%;
     height: 500px;
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(175, 175, 175)
 }
 
 .row:after { /* This inserts something after the content of the selected elements */
@@ -202,6 +202,8 @@ img {
     height: 100%;
     margin: auto auto auto auto;
     display: block;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 /* Anchor elements */ 
@@ -218,10 +220,6 @@ p {
     padding-right: 1vw;
 }
 
-p:hover {
-    transition: transform 1s;
-    transform: scale(1.01);
-}
 
 h1 {
     text-transform: uppercase; /* We are capitalizing our headings */
@@ -231,14 +229,13 @@ h1 {
     color: #1a1a1a;
 }
 
-h1:hover {
-    font-weight: normal; /* Makes the text no longer bold */
-}
 
 img:hover {
     filter: grayscale(5%);  /* Brings back most of the image's color when hovered over */
     transition: transform 1s;
     transform: scale(1.1);
+    padding-top: .01%;
+    padding-bottom: .01%;
 }
 
 footer {
